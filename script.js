@@ -13,16 +13,20 @@ function goback(e) {
     document.querySelector(".submit").addEventListener("click", () => {
         let val = document.querySelector(".get").value;
         if (val == random)
+        {
             alert("Congratuation!Right Guess");
+            alert("You win");
+            location.reload(true);
+        }
+            
 
         else if (val < random)
             alert("Correct answer is greater.");
         else
             alert("Correct answer is smaller.");
 
-        if (val == random && i <= 3)
-            alert("You win");
-        else if(val != random && i >= 3)
+
+         if(val != random && i >= 3)
             alert("You lose");
         i++;
 
