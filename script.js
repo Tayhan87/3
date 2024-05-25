@@ -12,18 +12,23 @@ function goback(e) {
 
     document.querySelector(".submit").addEventListener("click", () => {
         let val = document.querySelector(".get").value;
-        if (val == random)
-            alert("Congratuation!Right Guess");
+        if (val == random){
+                alert("Congratuation!Right Guess");
+                location.reload(true);
+            }
+            
 
         else if (val < random)
             alert("Correct answer is greater.");
         else
             alert("Correct answer is smaller.");
 
-        if (val == random && i <= 3)
-            alert("You win");
-        else if(val != random && i >= 3)
+
+        if (val != random && i >= 3){
             alert("You lose");
+            location.reload(true);
+        }
+            
         i++;
 
     });
@@ -35,11 +40,11 @@ function goback(e) {
 function createbutton() {
     let input = document.createElement('input');
     let submit = document.createElement('input');
-    submit.className = "submit mt-3 mb-5 ";
-    input.className = "get";
+    submit.className = "submit mt-3 mb-3 ";
+    input.className = "get mt-3";
     submit.value = "Guess";
     submit.type = "submit";
-    let container = document.querySelector(".container");
+    let container = document.querySelector("#inside");
     container.classList.add("card");
     container.classList.add("bg-info");
     container.appendChild(input);
