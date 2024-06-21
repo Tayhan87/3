@@ -26,7 +26,7 @@ function goback(e) {
             alert("Correct answer is smaller.");
 
 
-         if(val != random && i >= 3)
+         if(val != random && i > 3)
             alert("You lose");
         i++;
 
